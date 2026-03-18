@@ -18,41 +18,37 @@ import {
   MoveRight,
 } from "lucide-react";
 
-/* ══════════════════════════════════════════════
-   DATA
-══════════════════════════════════════════════ */
-
 const HERO_SLIDES = [
   {
-    src: "https://ozhean.com.my/wp-content/uploads/ozhean-ultherapy-prime-scaled.png",
+    src: "/images/ultherapy.png",
     alt: "Ultherapy Prime",
     label: "Ultherapy Prime",
     tag: "Lifting & Tightening",
     href: "https://ozhean.com.my/treatments/face-contouring/lifting-and-tightening/future-of-skin-lifting-ultherapy-prime/",
   },
   {
-    src: "https://ozhean.com.my/wp-content/uploads/ozhean-v-hifu-scaled.png",
+    src: "/images/hifu.png",
     alt: "V-HIFU",
     label: "Korean V-HIFU",
     tag: "Face Contouring",
     href: "https://ozhean.com.my/treatments/face-contouring/lifting-and-tightening/10therma/",
   },
   {
-    src: "https://ozhean.com.my/wp-content/uploads/home-banner-3.jpg",
+    src: "/images/anti-aging.png",
     alt: "Aesthetic Excellence",
     label: "Aesthetic Excellence",
     tag: "Anti-Aging",
     href: "#",
   },
   {
-    src: "https://ozhean.com.my/wp-content/uploads/home-banner-4.jpg",
+    src: "/images/korean-standard.png",
     alt: "Korean Standard",
     label: "Korean Standard",
     tag: "Skin Refinement",
     href: "#",
   },
   {
-    src: "https://ozhean.com.my/wp-content/uploads/home-banner-6.jpg",
+    src: "/images/timeless-beauty.png",
     alt: "Timeless Beauty",
     label: "Timeless Beauty",
     tag: "Signature Treatments",
@@ -63,28 +59,28 @@ const HERO_SLIDES = [
 const POPULAR_SERVICES = [
   {
     href: "https://ozhean.com.my/treatments/#face-contouring",
-    img: "https://ozhean.com.my/wp-content/uploads/2105632051_ND6kTGHZ_EC8B9CEAB7B8EB8B88ECB298_02.jpg",
+    img: "/images/face-contouring.png",
     title: "Face Contouring",
     desc: "Photo ready from any and every angle",
     index: "01",
   },
   {
     href: "https://ozhean.com.my/treatments/#body",
-    img: "https://ozhean.com.my/wp-content/uploads/2105632051_jEiZNtuq_EC8B9CEAB7B8EB8B88ECB298_03.jpg",
+    img: "/images/body.png",
     title: "Body",
     desc: "Be confident in your healthy, toned body",
     index: "02",
   },
   {
     href: "https://ozhean.com.my/treatments/#hair",
-    img: "https://ozhean.com.my/wp-content/uploads/2105632051_aNduscFV_EC8B9CEAB7B8EB8B88ECB298_04.jpg",
+    img: "/images/hair.png",
     title: "Hair",
     desc: "Regain your crown that stays on",
     index: "03",
   },
   {
     href: "https://ozhean.com.my/treatments/#wellness",
-    img: "https://ozhean.com.my/wp-content/uploads/2105632051_lABRs9VM_EC8B9CEAB7B8EB8B88ECB298_01.jpg",
+    img: "/images/wellness.png",
     title: "Wellness",
     desc: "Holistic care for a radiant you",
     index: "04",
@@ -127,26 +123,25 @@ const TESTIMONIALS = [
 const BLOG_POSTS = [
   {
     href: "https://ozhean.com.my/pigmentation-frequently-asked-question-faq/",
-    img: "https://ozhean.com.my/wp-content/uploads/Layer-0.png",
+    img: "/images/blog-pigmentation.png",
     category: "Pigmentation",
     title: "Frequently Asked Questions (FAQ)",
   },
   {
     href: "https://ozhean.com.my/hifu-non-invasive-treatment-trend-in-korea/",
-    img: "https://ozhean.com.my/wp-content/uploads/GettyImages-657672100.png",
+    img: "/images/blog-hifu.png",
     category: "HIFU",
     title: "Why is HIFU Trending in Korea?",
   },
 ];
 
 const PARTNER_LOGOS = [
-  "https://ozhean.com.my/wp-content/uploads/2.png",
-  "https://ozhean.com.my/wp-content/uploads/9.png",
-  "https://ozhean.com.my/wp-content/uploads/3.png",
-  "https://ozhean.com.my/wp-content/uploads/4.png",
-  "https://ozhean.com.my/wp-content/uploads/5.png",
-  "https://ozhean.com.my/wp-content/uploads/6.png",
-  "https://ozhean.com.my/wp-content/uploads/7.png",
+  "/images/doctors/doctor-l1.png",
+  "/images/doctors/doctor-l2.png",
+  "/images/doctors/doctor-l3.png",
+  "/images/doctors/doctor-w1.png",
+  "/images/doctors/doctor-w2.png",
+  "/images/doctors/doctor-w3.png",
 ];
 
 const NAV_ITEMS = [
@@ -526,7 +521,8 @@ function AboutSection() {
       <div className="about-grid">
         <div className="about-img-pane">
           <img
-            src="https://ozhean.com.my/wp-content/uploads/ozhean-ultherapy-prime-scaled.png"
+            src="/images/interior.png"
+            className="bg-center bg-cover"
             alt="Ozhean Clinic Bangsar"
           />
           <div className="about-badge">
@@ -604,9 +600,14 @@ function PartnersSection() {
       <p className="partners-label">
         OZHEAN Skin and Plastic Surgery Clinics Doctors
       </p>
-      <div className="partners-logos">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-4">
         {PARTNER_LOGOS.map((src, i) => (
-          <img key={i} src={src} alt={`Partner ${i + 1}`} />
+          <img
+            key={i}
+            src={src}
+            alt={`Partner ${i + 1}`}
+            className="bg-cover rounded-full w-24 h-24"
+          />
         ))}
       </div>
     </section>
@@ -892,8 +893,9 @@ function BookingSection() {
       <div className="booking-grid">
         <div className="booking-img-pane">
           <img
-            src="https://ozhean.com.my/wp-content/uploads/home-banner-6.jpg"
+            src="/images/timeless-beauty.png"
             alt="Book a treatment at Ozhean"
+            className="bg-center bg-cover"
           />
           <div className="booking-img-overlay" />
           <div className="booking-img-text">
