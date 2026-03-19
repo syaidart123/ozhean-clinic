@@ -315,7 +315,7 @@ function HeroCarousel() {
   return (
     <section
       className="relative overflow-hidden bg-[#4B3A33]"
-      style={{ height: "calc(100vh - 106px)", minHeight: 560, maxHeight: 860 }}
+      style={{ height: "calc(100vh - 306px)", minHeight: 560, maxHeight: 860 }}
     >
       <div className="relative w-full h-full">
         {HERO_SLIDES.map((s, i) => (
